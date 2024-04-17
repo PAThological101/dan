@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grouped Collapsible Content Control with Bootstrap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style type="text/css">
+        body {
+            margin: 60px;
+        }
+        section {
+            position: relative; /* Create a positioning context for the button */
+        }
+        .section-btn {
+            position: absolute;
+            top: 0;
+            right: 0; /* Position the button at the top right */
+            margin-top: 10px; /* Adjust spacing from the top */
+            margin-right: 10px; /* Adjust spacing from the right */
+        }
+        .hidden_content{
+            display: none;
+        }
+
+        .level1{
+            background-color: lightgrey;
+            padding: 10px;
+        }
+        .level2{
+            background-color: #48cae4;
+            color: white;
+            padding: 10px;
+        }
+        .level3{
+            padding: 10px;
+        }
+        .bottom-right {
+            text-align: right; /* Aligns the links to the right */
+            margin-top: 20px; /* Space above the links */
+        }
+
+        .back-to-top, .share {
+            display: inline-block;
+            margin-right: 10px; /* Space between the links */
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* Styling for the horizontal rule to match the full width and a subtle color */
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #ccc;
+            margin-top: 20px; /* Ensures there's space above the HR if content above is close */
+        }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="level1">
+<h2>Issue Group 1 - Presentation of Therapeutic Data from Individual RCTs in Advertising Must be Credible</h2>
+<p>A sentence or two.</p>
+<span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+<div class="hidden_content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div><!--Close for hidden content-->
+</div><!--close level1-->
+
+<div class="level2">
+    <h2>Issue Group 1.1 - The study have undergone sufficient independent review.</h2>
+    <p>Some words of wisdom.</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div><!--Close for hidden content-->
+</div><!--close level2-->
+
+
+
+<section class="level3" id="1.1.1">
+    <h2>1.1.1</h2>
+    <a href="#" class="btn btn-primary section-btn" target="_blank">Understanding</a>
+    <p>I've got stuff to say.<br>nore...</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div><!--Close for hidden content-->
+    <div class="container mt-3">
+        <!-- Group 1 -->
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-info" style="border: solid;" data-toggle="collapse" data-target=".multi-collapsePat1_1_1" aria-expanded="false" aria-controls="collapse1_1_1_A collapse1_1_1_B collapse1_1_1_C collapse1_1_1_D collapse1_1_1_E">Toggle Entire Group</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_1_A')" style="border: solid;">Antecedent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_1_B')" style="border: solid;">Concurrent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_1_C')" style="border: solid;">Subsequent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_1_D')" style="border: solid;">Application</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_1_E')" style="border: solid;">External Docs</button>
+        </div>
+
+        <div class="collapse multi-collapsePat1_1_1 mt-3" id="collapse1_1_1_A">
+            <div class="card card-body">
+                list of antecedent (Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_1_1" id="collapse1_1_1_B">
+            <div class="card card-body">
+                list of concurrent  (Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_1_1" id="collapse1_1_1_C">
+            <div class="card card-body">
+                list of subsequent (Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_1_1" id="collapse1_1_1_D">
+            <div class="card card-body">
+                list of key rulings(Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_1_1" id="collapse1_1_1_E">
+            <div class="card card-body">
+                list of external Guidance Docs (Group 1)
+            </div>
+        </div>
+    </div>
+    <div class="bottom-right">
+        <a href="#" class="back-to-top">Back to Top</a>
+        <a href="#" class="share" data-href="">Share</a>
+    </div>
+<hr>
+</section>
+
+
+
+
+<section class="level3" id="1.1.2">
+    <h2>1.1.2</h2>
+    <a href="#" class="btn btn-primary section-btn" target="_blank">Understanding</a>
+    <p>More stuff to say</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>At quis risus sed vulputate. Sit amet nisl suscipit adipiscing bibendum est ultricies integer. Elementum nibh tellus molestie nunc non blandit massa. Scelerisque fermentum dui faucibus in ornare quam. Tempus quam pellentesque nec nam aliquam. Tellus pellentesque eu tincidunt tortor aliquam. Nisl vel pretium lectus quam id leo in vitae turpis. Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Non enim praesent elementum facilisis leo vel. Amet massa vitae tortor condimentum lacinia quis.</p>
+    </div><!--Close for hidden content-->
+    <div class="container mt-3">
+        <!-- Group 1 -->
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-info" style="border: solid;" data-toggle="collapse" data-target=".multi-collapsePat1_1_2" aria-expanded="false" aria-controls="collapse1_1_2_A collapse1_1_2_B collapse1_1_2_C collapse1_1_2_D collapse1_1_2_E">Toggle Entire Group</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_2_A')" style="border: solid;">Antecedent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_2_B')" style="border: solid;">Concurrent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_2_C')" style="border: solid;">Subsequent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_2_D')" style="border: solid;">Application</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_2_E')" style="border: solid;">External Docs</button>
+        </div>
+
+        <div class="collapse multi-collapsePat1_1_2 mt-3" id="collapse1_1_2_A">
+            <div class="card card-body">
+                list of antecedent (Group 2)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_1_2" id="collapse1_1_2_B">
+            <div class="card card-body">
+                list of concurrent  (Group 2)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_1_2" id="collapse1_1_2_C">
+            <div class="card card-body">
+                list of subsequent (Group 2)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_1_2" id="collapse1_1_2_D">
+            <div class="card card-body">
+                list of key rulings(Group 2)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_1_2" id="collapse1_1_2_E">
+            <div class="card card-body">
+                list of external Guidance Docs (Group 2)
+            </div>
+        </div>
+    </div>
+    <div class="bottom-right">
+        <a href="#" class="back-to-top">Back to Top</a>
+        <a href="#" class="share" data-href="">Share</a>
+    </div>
+    <hr>
+</section>
+
+
+
+<section class="level3" id="1.1.3">
+    <h2>1.1.3</h2>
+    <a href="#" class="btn btn-primary section-btn" target="_blank">Understanding</a>
+    <p>More stuff to say</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>At quis risus sed vulputate. Sit amet nisl suscipit adipiscing bibendum est ultricies integer. Elementum nibh tellus molestie nunc non blandit massa. Scelerisque fermentum dui faucibus in ornare quam. Tempus quam pellentesque nec nam aliquam. Tellus pellentesque eu tincidunt tortor aliquam. Nisl vel pretium lectus quam id leo in vitae turpis. Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Non enim praesent elementum facilisis leo vel. Amet massa vitae tortor condimentum lacinia quis.</p>
+    </div><!--Close for hidden content-->
+    <div class="container mt-3">
+        <!-- Group 1 -->
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-info" style="border: solid;" data-toggle="collapse" data-target=".multi-collapsePat1_1_3" aria-expanded="false" aria-controls="collapse1_1_3_A collapse1_1_3_B collapse1_1_3_C collapse1_1_3_D collapse1_1_3_E">Toggle Entire Group</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_3_A')" style="border: solid;">Antecedent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_3_B')" style="border: solid;">Concurrent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_3_C')" style="border: solid;">Subsequent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_3_D')" style="border: solid;">Application</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_3_E')" style="border: solid;">External Docs</button>
+        </div>
+
+        <div class="collapse multi-collapsePat1_1_3 mt-3" id="collapse1_1_3_A">
+            <div class="card card-body">
+                list of antecedent (Group 3)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_1_3" id="collapse1_1_3_B">
+            <div class="card card-body">
+                list of concurrent  (Group 3)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_1_3" id="collapse1_1_3_C">
+            <div class="card card-body">
+                list of subsequent (Group 3)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_1_3" id="collapse1_1_3_D">
+            <div class="card card-body">
+                list of key rulings(Group 3)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_1_3" id="collapse1_1_3_E">
+            <div class="card card-body">
+                list of external Guidance Docs (Group 3)
+            </div>
+        </div>
+    </div>
+    <div class="bottom-right">
+        <a href="#" class="back-to-top">Back to Top</a>
+        <a href="#" class="share" data-href="">Share</a>
+    </div>
+    <hr>
+</section>
+
+<div class="level2">
+    <h2>Issue Group 1.2 - The study must be awaesome.</h2>
+    <p>Some words of wisdom.</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div><!--Close for hidden content-->
+</div><!--close level2-->
+
+<section class="level3" id="1.2.1">
+    <h2>1.2.1</h2>
+    <a href="#" class="btn btn-primary section-btn" target="_blank">Understanding</a>
+    <p>I've got so much to say.</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div><!--Close for hidden content-->
+    <div class="container mt-3">
+        <!-- Group 1 -->
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-info" style="border: solid;" data-toggle="collapse" data-target=".multi-collapsePat1_2_1" aria-expanded="false" aria-controls="collapse1_2_1_A collapse1_2_1_B collapse1_2_1_C collapse1_2_1_D collapse1_2_1_E">Toggle Entire Group</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_2_1_A')" style="border: solid;">Antecedent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_2_1_B')" style="border: solid;">Concurrent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_2_1_C')" style="border: solid;">Subsequent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_2_1_D')" style="border: solid;">Application</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_2_1_E')" style="border: solid;">External Docs</button>
+        </div>
+
+        <div class="collapse multi-collapsePat1_2_1 mt-3" id="collapse1_2_1_A">
+            <div class="card card-body">
+                list of antecedent (Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_2_1" id="collapse1_2_1_B">
+            <div class="card card-body">
+                list of concurrent  (Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_2_1" id="collapse1_2_1_C">
+            <div class="card card-body">
+                list of subsequent (Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_2_1" id="collapse1_2_1_D">
+            <div class="card card-body">
+                list of key rulings(Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_2_1" id="collapse1_2_1_E">
+            <div class="card card-body">
+                list of external Guidance Docs (Group 1)
+            </div>
+        </div>
+    </div>
+    <div class="bottom-right">
+        <a href="#" class="back-to-top">Back to Top</a>
+        <a href="#" class="share" data-href="">Share</a>
+    </div>
+<hr>
+</section>
+
+<div class="level1">
+    <h2>Issue Group 2 - Evidentiary requirements</h2>
+    <p>A sentence or two.</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div><!--Close for hidden content-->
+</div><!--close level1-->
+
+<div class="level2">
+    <h2>Issue Group 2.1 - Statistical considerations.</h2>
+    <p>Some words of wisdom.</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div><!--Close for hidden content-->
+</div><!--close level2-->
+
+<section class="level3" id="2.1.1">
+    <h2>2.1.1 - Statistical significance</h2>
+    <a href="#" class="btn btn-primary section-btn" target="_blank">Understanding</a>
+    <p>To be considered as evidence, results must achieve an acceptable level of statistical significance.<br>more...</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Within the study itself, the secondary endpoint must be directionally consistent with the primary endpoint in order to be used as support for claims of benefit. Note however that the PAAB may require disclosure of failed secondary endpoints to balance claims based on primary endpoints in order to avoid overly selective presentations (see XXX).</p>
+    </div><!--Close for hidden content-->
+    <div class="container mt-3">
+        <!-- Group 1 -->
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-info" style="border: solid;" data-toggle="collapse" data-target=".multi-collapsePat2_1_1" aria-expanded="false" aria-controls="collapse2_1_1_A collapse2_1_1_B collapse2_1_1_C collapse2_1_1_D">Toggle Entire Group</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_1_A')" style="border: solid;">Application of this Issue</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_1_B')" style="border: solid;">Antecedent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_1_C')" style="border: solid;">Concurrent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_1_D')" style="border: solid;">Subsequent Issues</button>
+        </div>
+
+        <div class="collapse multi-collapsePat2_1_1 mt-3" id="collapse2_1_1_A">
+            <div class="card card-body">
+                <h3>Application of this issue:</h3>
+                <h5>Relevant PAAB code section(s)</h5>
+                <ul>
+                    <li><a href="documents/code/code.html#cs5_9">PAAB Code s5.9</a></li>
+                </ul>
+                
+                <h5>Relevant internal document(s)</h5>
+                <ul>
+                    <li><a href="documents/internal_docs/stats_primer_doc/stats_primer.html">The basics of statistical significance testing</a></li>
+                </ul>
+                
+                <h5>Relevant key ruling(s)</h5>
+                <ul>
+                    <li>A non-significant p-value cannot support claims of 'similar/comparable' (efficacy, safety...): <a href="documents/internal_docs/evidence/key_rulings/ns_never_means_similar.html">CLICK HERE</a></li>
+                    <li>p=0.05 is not considered statiatically significant: <a href="documents/internal_docs/evidence/key_rulings/if_p_equals_0.05.html">CLICK HERE</a></li>
+                </ul>
+
+                <h5>Relevent external document(s)</h5>
+                <p>N/A</p>
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_1" id="collapse2_1_1_B">
+            <div class="card card-body">
+                <h3>Antecedant Issues:</h3>
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_1" id="collapse2_1_1_C">
+            <div class="card card-body">
+                <h3>Concurrent Issues:</h3>
+                secondary endpoints
+                control for type I error
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_1" id="collapse2_1_1_D">
+            <div class="card card-body">
+                <h3>Subsequent Issues:</h3>
+                <p>N/A</p>
+                
+            </div>
+        </div>
+
+    </div>
+    <div class="bottom-right">
+        <a href="#" class="back-to-top">Back to Top</a>
+        <a href="#" class="share" data-href="">Share</a>
+    </div>
+<hr>
+</section>
+
+<section class="level3" id="2.1.1">
+    <h2>2.1.2 - Control for type I error</h2>
+    <a href="#" class="btn btn-primary section-btn" target="_blank">Understanding</a>
+    <p>To be considered as evidence, results must achieve an acceptable level of statistical significance.<br>more...</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Within the study itself, the secondary endpoint must be directionally consistent with the primary endpoint in order to be used as support for claims of benefit. Note however that the PAAB may require disclosure of failed secondary endpoints to balance claims based on primary endpoints in order to avoid overly selective presentations (see XXX).</p>
+    </div><!--Close for hidden content-->
+    <div class="container mt-3">
+        <!-- Group 1 -->
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-info" style="border: solid;" data-toggle="collapse" data-target=".multi-collapsePat2_1_1" aria-expanded="false" aria-controls="collapse2_1_1_A collapse2_1_1_B collapse2_1_1_C collapse2_1_1_D collapse2_1_1_E">Toggle Entire Group</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_1_A')" style="border: solid;">Antecedent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_1_B')" style="border: solid;">Concurrent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_1_C')" style="border: solid;">Subsequent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_1_D')" style="border: solid;">Application</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_1_E')" style="border: solid;">External Docs</button>
+        </div>
+
+        <div class="collapse multi-collapsePat2_1_1 mt-3" id="collapse2_1_1_A">
+            <div class="card card-body">
+                <a href="documents/internal_docs/stats_primer_doc/stats_primer.html">The basics of statistical significance testing</a>
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_1" id="collapse2_1_1_B">
+            <div class="card card-body">
+                <a href="documents/code/code.html#cs5_9">PAAB Code s5.9</a>
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_1" id="collapse2_1_1_C">
+            <div class="card card-body">
+                list of subsequent (Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_1" id="collapse2_1_1_D">
+            <div class="card card-body">
+                list of key rulings(Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_1" id="collapse2_1_1_E">
+            <div class="card card-body">
+                list of external Guidance Docs (Group 1)
+            </div>
+        </div>
+    </div>
+    <div class="bottom-right">
+        <a href="#" class="back-to-top">Back to Top</a>
+        <a href="#" class="share" data-href="">Share</a>
+    </div>
+<hr>
+</section>
+
+<section class="level3" id="2.1.3">
+    <h2>2.1.3 - Analysis based on ITT rather than PP or mITT</h2>
+    <a href="#" class="btn btn-primary section-btn" target="_blank">Understanding</a>
+    <p>To be considered as evidence, results must achieve an acceptable level of statistical significance.<br>more...</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Within the study itself, the secondary endpoint must be directionally consistent with the primary endpoint in order to be used as support for claims of benefit. Note however that the PAAB may require disclosure of failed secondary endpoints to balance claims based on primary endpoints in order to avoid overly selective presentations (see XXX).</p>
+    </div><!--Close for hidden content-->
+    <div class="container mt-3">
+        <!-- Group 1 -->
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-info" style="border: solid;" data-toggle="collapse" data-target=".multi-collapsePat2_1_1" aria-expanded="false" aria-controls="collapse2_1_1_A collapse2_1_1_B collapse2_1_1_C collapse2_1_1_D collapse2_1_1_E">Toggle Entire Group</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_1_A')" style="border: solid;">Antecedent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_1_B')" style="border: solid;">Concurrent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_1_C')" style="border: solid;">Subsequent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_1_D')" style="border: solid;">Application</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_1_E')" style="border: solid;">External Docs</button>
+        </div>
+
+        <div class="collapse multi-collapsePat2_1_1 mt-3" id="collapse2_1_1_A">
+            <div class="card card-body">
+                list of antecedent (Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_1" id="collapse2_1_1_B">
+            <div class="card card-body">
+                PAAB code 5.9
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_1" id="collapse2_1_1_C">
+            <div class="card card-body">
+                list of subsequent (Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_1" id="collapse2_1_1_D">
+            <div class="card card-body">
+                list of key rulings(Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_1" id="collapse2_1_1_E">
+            <div class="card card-body">
+                list of external Guidance Docs (Group 1)
+            </div>
+        </div>
+    </div>
+    <div class="bottom-right">
+        <a href="#" class="back-to-top">Back to Top</a>
+        <a href="#" class="share" data-href="">Share</a>
+    </div>
+<hr>
+</section>
+
+<div class="level2">
+    <h2>Issue Group 2.1 - Secondary endpoints.</h2>
+    <p>Some words of wisdom.</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div><!--Close for hidden content-->
+</div><!--close level2-->
+
+<section class="level3" id="2.1.1">
+    <h2>2.1.1 - Consistency with primary endpoint.</h2>
+    <a href="#" class="btn btn-primary section-btn" target="_blank">Understanding</a>
+    <p>A secondary endpoint cannot salvage a failed study. The study is powered to assess the primary endpoint.<br>more...</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Within the study itself, the secondary endpoint must be directionally consistent with the primary endpoint in order to be used as support for claims of benefit. Note however that the PAAB may require disclosure of failed secondary endpoints to balance claims based on primary endpoints in order to avoid overly selective presentations (see XXX).</p>
+    </div><!--Close for hidden content-->
+    <div class="container mt-3">
+        <!-- Group 1 -->
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-info" style="border: solid;" data-toggle="collapse" data-target=".multi-collapsePat2_1_1" aria-expanded="false" aria-controls="collapse2_1_1_A collapse2_1_1_B collapse2_1_1_C collapse2_1_1_D collapse2_1_1_E">Toggle Entire Group</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_1_A')" style="border: solid;">Antecedent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_1_B')" style="border: solid;">Concurrent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_1_C')" style="border: solid;">Subsequent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_1_D')" style="border: solid;">Application</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_1_E')" style="border: solid;">External Docs</button>
+        </div>
+
+        <div class="collapse multi-collapsePat2_1_1 mt-3" id="collapse2_1_1_A">
+            <div class="card card-body">
+                list of antecedent (Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_1" id="collapse2_1_1_B">
+            <div class="card card-body">
+                list of concurrent  (Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_1" id="collapse2_1_1_C">
+            <div class="card card-body">
+                list of subsequent (Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_1" id="collapse2_1_1_D">
+            <div class="card card-body">
+                list of key rulings(Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_1" id="collapse2_1_1_E">
+            <div class="card card-body">
+                list of external Guidance Docs (Group 1)
+            </div>
+        </div>
+    </div>
+    <div class="bottom-right">
+        <a href="#" class="back-to-top">Back to Top</a>
+        <a href="#" class="share" data-href="">Share</a>
+    </div>
+<hr>
+</section>
+
+<section class="level3" id="2.1.2">
+    <h2>2.1.2 - No cherry-picking.</h2>
+    <a href="#" class="btn btn-primary section-btn" target="_blank">Understanding</a>
+    <p>A secondary endpoint cannot salvage a failed study. The study is powered to assess the primary endpoint.<br>more...</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Within the study itself, the secondary endpoint must be directionally consistent with the primary endpoint in order to be used as support for claims of benefit. Note however that the PAAB may require disclosure of failed secondary endpoints to balance claims based on primary endpoints in order to avoid overly selective presentations (see XXX).</p>
+    </div><!--Close for hidden content-->
+    <div class="container mt-3">
+        <!-- Group 1 -->
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-info" style="border: solid;" data-toggle="collapse" data-target=".multi-collapsePat2_1_2" aria-expanded="false" aria-controls="collapse2_1_2_A collapse2_1_1_B collapse2_1_2_C collapse2_1_2_D collapse2_1_2_E">Toggle Entire Group</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_2_A')" style="border: solid;">Antecedent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_2_B')" style="border: solid;">Concurrent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_2_C')" style="border: solid;">Subsequent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_2_D')" style="border: solid;">Application</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_2_E')" style="border: solid;">External Docs</button>
+        </div>
+
+        <div class="collapse multi-collapsePat2_1_2 mt-3" id="collapse2_1_2_A">
+            <div class="card card-body">
+                list of antecedent (Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_2" id="collapse2_1_2_B">
+            <div class="card card-body">
+                list of concurrent  (Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_2" id="collapse2_1_2_C">
+            <div class="card card-body">
+                list of subsequent (Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_2" id="collapse2_1_2_D">
+            <div class="card card-body">
+                list of key rulings(Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_2" id="collapse2_1_2_E">
+            <div class="card card-body">
+                list of external Guidance Docs (Group 1)
+            </div>
+        </div>
+    </div>
+    <div class="bottom-right">
+        <a href="#" class="back-to-top">Back to Top</a>
+        <a href="#" class="share" data-href="">Share</a>
+    </div>
+<hr>
+</section>
+
+<section class="level3" id="2.1.3">
+    <h2>2.1.3 - Identify that the presentation relates to a secondary endpoint.</h2>
+    <a href="#" class="btn btn-primary section-btn" target="_blank">Understanding</a>
+    <p>A secondary endpoint cannot salvage a failed study. The study is powered to assess the primary endpoint.<br>more...</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Within the study itself, the secondary endpoint must be directionally consistent with the primary endpoint in order to be used as support for claims of benefit. Note however that the PAAB may require disclosure of failed secondary endpoints to balance claims based on primary endpoints in order to avoid overly selective presentations (see XXX).</p>
+    </div><!--Close for hidden content-->
+    <div class="container mt-3">
+        <!-- Group 1 -->
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-info" style="border: solid;" data-toggle="collapse" data-target=".multi-collapsePat2_1_3" aria-expanded="false" aria-controls="collapse2_1_3_A collapse2_1_3_B collapse2_1_3_C collapse2_1_3_D collapse2_1_3_E">Toggle Entire Group</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_3_A')" style="border: solid;">Antecedent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_3_B')" style="border: solid;">Concurrent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_3_C')" style="border: solid;">Subsequent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_3_D')" style="border: solid;">Application</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse2_1_3_E')" style="border: solid;">External Docs</button>
+        </div>
+
+        <div class="collapse multi-collapsePat2_1_3 mt-3" id="collapse2_1_3_A">
+            <div class="card card-body">
+                list of antecedent (Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_3" id="collapse2_1_3_B">
+            <div class="card card-body">
+                list of concurrent  (Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_3" id="collapse2_1_3_C">
+            <div class="card card-body">
+                list of subsequent (Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_3" id="collapse2_1_3_D">
+            <div class="card card-body">
+                list of key rulings(Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat2_1_3" id="collapse2_1_3_E">
+            <div class="card card-body">
+                list of external Guidance Docs (Group 1)
+            </div>
+        </div>
+    </div>
+    <div class="bottom-right">
+        <a href="#" class="back-to-top">Back to Top</a>
+        <a href="#" class="share" data-href="">Share</a>
+    </div>
+<hr>
+</section>
+
+
+
+<div class="level1">
+    <h2>Issue Group 3 - Fair balance creation</h2>
+    <p>A sentence or two.</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div><!--Close for hidden content-->
+</div><!--close level1-->
+
+    <div class="level2">
+        <h2>Issue Group 3.1 - Highest level fair balance.</h2>
+        <p>Some words of wisdom.</p>
+        <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+        <div class="hidden_content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div><!--Close for hidden content-->
+    </div><!--close level2-->
+
+<script>
+    $(document).ready(function() {
+        $('.toggle_content').click(function() {
+            var hiddenContent = $(this).nextAll(".hidden_content").first(); // More reliable sibling selection
+            hiddenContent.slideToggle('fast', function() {
+                // This ensures the visibility check is accurate
+                var isVisible = hiddenContent.is(":visible");
+                var toggleText = isVisible ? "SEE LESS..." : "SEE MORE...";
+                // Update the text of the toggle element
+                $(this).prev(".toggle_content").text(toggleText);
+            }.bind(this)); // Ensure 'this' inside the callback refers to '.toggle_content'
+        });
+    });
+</script>
+
+<script>
+    function toggleIndividualPat(collapseIdPat) {
+        $('#' + collapseIdPat).collapse('toggle');
+    }
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var shares = document.querySelectorAll('.share');
+        shares.forEach(function(share) {
+            // Find the closest section parent and get its ID
+            var sectionId = share.closest('section').id;
+            // Construct the share URL
+            var shareUrl = window.location.href.split('#')[0] + '#' + sectionId;
+            // Set the share link's href attribute
+            share.setAttribute('href', shareUrl);
+            // Optional: Add event listener for custom share behavior
+            share.addEventListener('click', function(event) {
+                event.preventDefault();
+                // Example: Copy the shareUrl to the clipboard
+                navigator.clipboard.writeText(shareUrl).then(function() {
+                    alert('Share URL copied to clipboard: ' + shareUrl);
+                }, function(err) {
+                    console.error('Could not copy text: ', err);
+                });
+            });
+        });
+    });
+    </script>
+    
+
+</body>
+</html>
+

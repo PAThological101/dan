@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Multiplicity</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+	
+  body{
+        padding: 60px;
+        font-family: helvetica, arial, sans-serif;
+    }
+
+    .site-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #EEEEEE;
+    }
+
+    .title-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .version-info {
+        margin: 0; /* Removes default margin */
+        font-size: 14px; /* Adjust as needed */
+    }
+
+    .logo {
+        height: 50px; /* Adjust based on your logo */
+        width: auto; /* Keeps the aspect ratio */
+    }
+
+table, th, td {border: 1px solid black;}
+th, td {padding: 5px;}
+th {text-align: left;}
+
+/* Default alignment for td in all tables */
+td {
+  text-align: left; /* Assuming you want the default to be left aligned */
+}
+
+/* Center alignment for td in the centerAligned table */
+#centerAligned td {
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+
+
+</style>
+
+
+</head>
+<body>
+
+<header class="site-header">
+  <div class="title-container">
+       <h1>Multiplicity adjustments. When required? INTERNAL TRAINING</h1>
+       <p class="version-info">Version 1. June 2016</p>
+  </div>
+    <img src="../../../../logo/logo.png" alt="PAAB Logo" class="logo">
+</header>
+<br>
+
+
+<h2>Overview</h2>
+<p>Published trials are increasingly employing methods to contain the risks associated with multiple testing. Therefore, when such methods are clearly called for, review practices must differentiate between scenarios in which statistical significance was maintained in spite of the power reduction associated with them <span style="font-weight: bold">versus</span> scenarios where either the methods were not used or their use resulted in loss of statistical significance.</p>
+<p>Anytime the study and secondary endpoint do not (in and of themselves) contravene the code, data may be presented in a factual unembellished manner. However, when inferences are particularly susceptible to family α error (per the following table), the acceptability of an explicit claim of superiority/improvement/difference is determined by whether the result of the multiplicity adjustment. Table 1 indicates the scenarios in which adjustments would be required for such claims (status quo). Table 2 highlights all possible approaches to data (the new element here is the yellow approach). Table 3 provides examples applying the principles in Table 1 and 2 to most scenarios we have seen to date.    </p>
+<p>Note that throughout this document, p=SS should be taken to mean "statistically significant".</p>
+
+<section>
+<div style="border: solid; padding: 10px;">
+<table id="centerAligned">
+<caption style="text-align: left;">TABLE 1:</caption>
+<tr>
+<th rowspan="2">Scenario</th>
+<th colspan="2">Multiplicity Adjustment for statistically significant 2º</th>
+</tr>
+<tr>
+<th>Required for claim of superiority</th>
+<th>Not required for claim of superiority</th>
+</tr>
+<tr>
+<th>1º Did not achieve statistical significance</th>
+<td colspan="2">2º cannot be validly analyzed</td>
+</tr>
+<tr>
+<th>1º achieved statistical significance but only for non-inferiority</th>
+<td>✓*</td>
+<td></td>
+</tr>
+<tr>
+<th style="border-bottom: none;">1º achieved statistical superiority
+<div style="font-weight: normal;">
+<ul>
+<li style="list-style-type: square;">2º in question is related to the 1º (even vaguely related e.g. both relate to efficacy):</li>
+<ul>
+<li style="list-style-type: circle;">All other related 2º also attained superiority</li>
+</ul>
+</ul>				
+</div>
+</th>
+<td></td>
+<td>✓</td>
+</tr>
+<tr>
+<td style="border-bottom: none; border-top: none;"><ul>
+<li style="list-style-type: none;">
+<ul>
+<li style="text-align: left; list-style-type: circle;" >There is a mixture of superiority & p=ns among related 2º</li>
+</ul>
+</li>
+</ul>
+</td>
+<td></td>
+<td>✓</td>
+</tr>
+<tr>
+<td style="border-top: none; border-bottom: none;">
+<ul>
+<li style="list-style-type: square; text-align: left;">2º in question is not related to the 1º (e.g.1 efficacy & safety respectively. e.g.2 both are safety endpoints but for clearly unrelated risks -- yes this is a different standard from above for efficacy):</li>
+<ul>
+<li style="text-align: left; list-style-type: circle;">All other related 2º also attained superiority</li>
+</ul>
+</ul>
+</td>
+<td></td>
+<td>✓</td>
+</tr>	
+<tr>
+<td style="border-top: none;"><ul>
+<li style="list-style-type: none;">
+<ul>
+<li style="text-align: left; list-style-type: circle;">There is a mixture of superiority & p=ns among related 2º</li>
+</ul>
+</li>
+</ul>
+</td>
+<td>✓*</td>
+<td></td>
+</tr>
+<tr>
+<th>Any sub-group analysis</th>
+<td>✓*</td>
+<td></td>
+</tr>
+</table>
+<p>*If adjustments were not made a priori, either confirmation from an additional high quality RCT is required or post-hoc Bonferroni adjustment in a med / reg letter</p>
+<p style="font-weight: bold;">This table does not apply to TMA data. See bottom of this post for the TMA approach.</p>
+</div>
+</section>
+
+<section>
+<h2>Adapting claims & data from clinical trials -- General approaches</h2>
+<p>For any given data set, there are three possible review approaches to select from. They are presented below in ascending order of client desirability. They are colour coded to simplify reference to them throughout this document.</p>
+
+<div style="background-color: #FF474C; border: solid; padding: 5px;" id="red_approach">
+  <p style="font-weight: bold;">Code red!! Stop!!</p>
+  <p>Cannot present any 2º content. At most, the client can present the 1º in a manner clearly demonstrating that this is a failed study.</p>
+</div>
+<br>
+
+<div style="background-color: #FFFF8A; border: solid; padding: 5px;" id="yellow_approach">
+  <p style="font-weight: bold;">Code yellow!! Proceed but with caution</p>
+  <p>The presentation must have the following attributes:</p>
+  <ul>
+    <li>Claim neutrality</li>
+      <ul>
+        <li>Simply present data with corresponding stats (text or graphic form). Can't add elements to the data presentation which suggest an improvement or difference (e.g. relative reduction<span style="vertical-align: super; font-size: small;">1</span> callouts/arrows, NNT<span style="vertical-align: super; font-size: small;">2</span>).</li>
+        <li>Claim neutrality also applies to context (e.g. headlines & tabs). Introduce the data presentations with “topics” (e.g. “efficacy” as opposed to conclusions (e.g. demonstrated powerful efficacy ….). </li>
+      </ul>
+    <li>Must state that the presented CI or p-value is unadjusted. For example, it suffices to insert “(unadjusted)” next to the CI or p-value. Note that p-values & CI cannot be relegated to weblink destinations.</li>
+  </ul>
+  <p>Essentially, provided statistical analysis is presented to satisfy s5.9, we'll allow a data presentation. But we'll reject overt and contextually implied claims of efficacy/safety/difference. <br>
+  This approach better reflects the statistical reality that multiplicity issues do not call into question the quality/integrity of the data itself but rather the conclusion made from that data.</p>
+  <p>For subgroups, in addition to the above:<br>
+  Must present the subgroup of interest along with all of the complementary subgroups with equal emphasis (such that none stands out). E.g. Can't just present male data, must present both male and female data<span style="vertical-align: super; font-size: small;">3</span>.</p>
+  <hr>
+  <div style="font-size: small; margin-left: 20px;">
+    <span style="vertical-align: super;">1</span> No relative reductions whether vs comparator (active or inactive) or from baseline.<br>
+    <span style="vertical-align: super;">2</span> Since this conveys a difference.<br>
+    <span style="vertical-align: super;">3</span> But presentation of male & female data does not require inclusion of other ways to chop up the data (e.g. baseline viral load or race etc…)
+  </div>
+</div>
+<br>
+
+<div style="background-color: #8AFF8A;; border: solid; padding: 5px;"" id="green_approach">
+  <p style="font-weight: bold;">Code green!! Go for it!</p>
+  <p>Can choose to explicitly state the inference / conclusion from the statistics (i.e. can make explicit superiority/improvement/difference claim).</p>
+</div>
+<br>
+
+</section>
+<br>
+<br>
+
+
+
+
+
+
+
+<section>
+<h2>Cases</h2>
+<p>If no statistical analysis is performed on the secondary endpoint of interest, use the red approach (neither explicit inferences/claims nor data may be presented). Unlike similar presentations from PM, even a comprehensive presentation from the study (e.g. listing a comprehensive comparison of all AEs in both study arms is not acceptable in the absence of any p-values or CI).</p>
+<p>If message is about 2º of interest being NS, use wording “No statistically significant difference was…”. Whether the comparator is active or inactive, this inconclusive finding should support neither a claim of efficacy nor safety. Note that there is no need for adjustments (multiplicity adjustments only widen CI and increase p-values).</p>
+<p>If message is about 2º of interest being SS, the PAAB approach is based on which of the following scenarios the situation best mirrors (note that the approach is the same whether the comparator is active or inactive):</p>
+<table>
+  <caption style="text-align: left;">TABLE 3:</caption>
+  <tr>
+    <th>1º=NS</th>
+    <th>1º=NI but not superior, unadjusted 2º=SS</th>
+    <th>1º=Superior, unadjusted 2º=SS</th>
+  </tr>
+  <tr>
+    <td><span style="color: red;">Red approach</span></td>
+    <td>
+        <p><u>2º is not a subgroup</u></p>
+        <ol type="a">
+          <li><p>2º adjusted = SS<br><span style="color: green;">Green approach</span></p></li>
+          <li><p>2º adjusted = NS (or client refuses to adjust)<br><span style="color: orange;">Yellow approach</span></p></li>
+        </ol>
+        <p><u>2º is a subgroup</u></p>
+        <ol type="a">
+          <li><p style="font-weight: bold;">Subgroup for the same outcome from 1º.</p>
+          <p>Can show data following yellow approach if there are stats. Presentation must appear following the NI data for the primary endpoint.<br><br>If client wants an explicit claim that drug was effective in a subgroup or combination of subgroups (i.e. <span style="color: green;">green approach</span>), they need to show that the outcome in the subgroup(s) was still SS following adjustment for multiplicity. Also must present following NI presentation for overall study population.</p>       
+          </li>
+          <li>
+            <p style="font-weight: bold;">Subgroup for outcome in secondary</p>
+            <p>Same as above</p>
+          </li>
+        </ol>
+      </td>
+    <td>
+      <p><u>2º is not a subgroup</u></p>
+      <ol type="a">
+        <li><p>1º and the 2º of interest are related to each other or all related 2º are SS<br><span style="color: green;">Green approach</span>(even w/o adjustment)</p></li>
+        <li>
+          <div id="specificPart" class="highlight">
+            <p>1º and the 2º of interest are not related & there is a mixture of findings between the 2º of interest and other related 2º</p>
+            <p><span style="color: green;">Green if 2º adjusted = SS</span></p>
+            <p><span style="color: orange;">Green if 2º adjusted = NS</span></p>
+          </div>
+        </li>
+      </ol>
+      <p><u>2º is a subgroup</u></p>
+      <ol type="a">
+        <li><p style="font-weight: bold;">Subgroup for the same outcome from 1º.</p>
+        <p>Can show data following yellow approach if there are stats (claim neutral + complement).<br><br>If client wants an explicit claim that drug was effective in a subgroup or all complementary subgroups (i.e. <span style="color: green;">green approach</span>), they need to show that the outcome in the subgroup(s) was still SS following adjustment for multiplicity.</p>       
+        </li>
+        <li>
+          <p style="font-weight: bold;">Subgroup for outcome in secondary</p>
+          <p>Same as above</p>
+        </li>
+      </ol>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>For subgroups: If client cites "interaction tests" or "test of homogeneity" as a rationale for acceptability of an explicit claims, talk with Patrick</td>
+    <td></td>
+  </tr>
+</table>
+</section>
+
+<section>
+<p>Note that to present an outcome in a case study emphasizing a sub-population or to present epidemiology info focusing on a particular sub-population, you need data meeting the requirements for the green approach (or PM data).</p>
+<h2>Adapting claims & data from the PM</h2>
+<p>The cases discussed elsewhere in this document apply to study data which are not included within the PM. It is simple to summarize the approach for PMs into three axioms:</p>
+<ol>
+<li>As has historically been the case, claims from the PM which are consistent with the PM in context & emphasis are acceptable. i.e. there is no foreseeable scenario in which we’d use the red approach for PM data.</li>
+<li>If a PM indicates statistical significance (either through text or through data alone – e.g. table states p=ss), apply green approach whether adjustments are mentioned or there is no discussion of adjustments at all. i.e. If Health Canada did not require adjustments, nor will we.</li>
+<li>However, if the PM goes so far as to say “ unadjusted ” apply yellow approach unless the overt claims are also made for the corresponding data in the PM. We will start seeing more of this in PMs. Very rare in the past so this is not expected to impact prior approvals.</li>
+</ol>
+</section>
+
+
+
+
+
+</body>
+</html>

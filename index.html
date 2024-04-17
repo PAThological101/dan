@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grouped Collapsible Content Control with Bootstrap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style type="text/css">
+        body {
+            margin: 60px;
+        }
+        section {
+            position: relative; /* Create a positioning context for the button */
+        }
+        .section-btn {
+            position: absolute;
+            top: 0;
+            right: 0; /* Position the button at the top right */
+            margin-top: 10px; /* Adjust spacing from the top */
+            margin-right: 10px; /* Adjust spacing from the right */
+        }
+        .hidden_content{
+            display: none;
+        }
+
+        .level1{
+            background-color: lightgrey;
+            padding: 10px;
+        }
+        .level2{
+            background-color: #48cae4;
+            color: white;
+            padding: 10px;
+        }
+        .level3{
+            padding: 10px;
+        }
+        .bottom-right {
+            text-align: right; /* Aligns the links to the right */
+            margin-top: 20px; /* Space above the links */
+        }
+
+        .back-to-top, .share {
+            display: inline-block;
+            margin-right: 10px; /* Space between the links */
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* Styling for the horizontal rule to match the full width and a subtle color */
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #ccc;
+            margin-top: 20px; /* Ensures there's space above the HR if content above is close */
+        }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="level1">
+<h2>Issue Group 3 - Presentation of Therapeutic Data from Individual RCTs in Advertising Must be Credible</h2>
+<p>A sentence or two.</p>
+<span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+<div class="hidden_content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div><!--Close for hidden content-->
+</div><!--close level1-->
+
+<div class="level2">
+    <h2>Issue Group 3.1 - The study has undergone sufficient independent review.</h2>
+    <p>Some words of wisdom.</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div><!--Close for hidden content-->
+</div><!--close level2-->
+
+
+<div class="level2">
+    <h2>Issue Group 3.2 - The study design must be consistent with the applicable TMAs.</h2>
+    <p>Some words of wisdom.</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div><!--Close for hidden content-->
+</div><!--close level2-->
+
+<div class="level2">
+    <h2>Issue Group 3.3 - The study design must be scientifically robust.</h2>
+    <p>Some words of wisdom.</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div><!--Close for hidden content-->
+</div><!--close level2-->
+
+
+
+<div class="level2">
+    <h2>Issue Group 3.4 - The study analyses must support statistically sound inferences</h2>
+    <p>A sentence or two.</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div><!--Close for hidden content-->
+</div><!--close level2-->
+
+
+<section class="level3" id="3.4.1">
+    <h2 style="padding-right: 180px;">3.4.1 - APS presentation is not reflective of statistically significant findings</h2>
+    <a href="documents/internal_docs/evidence/internal_guidance/stats_primer_doc/stats_primer.html" class="btn btn-primary section-btn" target="_blank">Understanding</a>
+    <p>To be considered as evidence, results must achieve an acceptable level of statistical significance.<br>more...</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Within the study itself, the secondary endpoint must be directionally consistent with the primary endpoint in order to be used as support for claims of benefit. Note however that the PAAB may require disclosure of failed secondary endpoints to balance claims based on primary endpoints in order to avoid overly selective presentations (see XXX).</p>
+    </div><!--Close for hidden content-->
+    <div class="container mt-3">
+        <!-- Group 1 -->
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-info" style="border: solid;" data-toggle="collapse" data-target=".multi-collapsePat3_4_1" aria-expanded="false" aria-controls="collapse3_4_1_A collapse3_4_1_B collapse3_4_1_C collapse3_4_1_D">Toggle Entire Group</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_4_1_A')" style="border: solid;">Application of this Issue</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_4_1_B')" style="border: solid;">Antecedent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_4_1_C')" style="border: solid;">Concurrent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_4_1_D')" style="border: solid;">Subsequent Issues</button>
+        </div>
+
+        <div class="collapse multi-collapsePat3_4_1 mt-3" id="collapse3_4_1_A">
+            <div class="card card-body">
+                <h3>Application of this issue:</h3>
+                <h5>Relevant PAAB code section(s)</h5>
+                <ul>
+                    <li><a href="documents/code/code.html#cs5_9">PAAB Code s5.9</a></li>
+                </ul>
+                
+                <h5>Relevant internal document(s)</h5>
+                <ul>
+                    <li><a href="documents/internal_docs/evidence/internal_guidance/stats_primer_doc/stats_primer.html">The basics of statistical significance testing</a></li>
+                </ul>
+                
+                <h5>Relevant key ruling(s)</h5>
+                <ul>
+                    <li>A non-significant p-value cannot support claims of 'similar/comparable' (efficacy, safety...): <a href="documents/internal_docs/evidence/key_rulings/ns_never_means_similar.html">CLICK HERE</a></li>
+                    <li>p=0.05 is not considered statiatically significant: <a href="documents/internal_docs/evidence/key_rulings/if_p_equals_0.05.html">CLICK HERE</a></li>
+                </ul>
+
+                <h5>Relevant exceptions</h5>
+                <ul>
+                    <li>Claims and presentations extracted, or closely paraphrased, from the relevant product monograph are acceptable even in the absence of statistically significant findings.</li>
+                </ul>
+
+                <h5>Relevent external document(s)</h5>
+                <ul>
+                    <li>Links identifying appropriate anchor ID for external html docs go here.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat3_4_1" id="collapse3_4_1_B">
+            <div class="card card-body">
+                <h3>Antecedant Issues:</h3>
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat3_4_1" id="collapse3_4_1_C">
+            <div class="card card-body">
+                <h3>Concurrent Issues:</h3>
+                secondary endpoints
+                control for type I error
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat3_4_1" id="collapse3_4_1_D">
+            <div class="card card-body">
+                <h3>Subsequent Issues:</h3>
+                <p>N/A</p>
+                
+            </div>
+        </div>
+
+    </div>
+    <div class="bottom-right">
+        <a href="#" class="back-to-top">Back to Top</a>
+        <a href="#" class="share" data-href="">Share</a>
+    </div>
+<hr>
+</section>
+
+<section class="level3" id="3.4.2">
+    <h2 style="padding-right: 180px;">3.4.2 - Data presented in the APS was not adequately controlled for type I error</h2>
+    <a href="documents/internal_docs/evidence/internal_guidance/multiplicity.html" class="btn btn-primary section-btn" target="_blank">Understanding</a>
+    <p>To be considered as evidence, results must achieve an acceptable level of statistical significance.<br>more...</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Within the study itself, the secondary endpoint must be directionally consistent with the primary endpoint in order to be used as support for claims of benefit. Note however that the PAAB may require disclosure of failed secondary endpoints to balance claims based on primary endpoints in order to avoid overly selective presentations (see XXX).</p>
+    </div><!--Close for hidden content-->
+    <div class="container mt-3">
+        <!-- Group 1 -->
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-info" style="border: solid;" data-toggle="collapse" data-target=".multi-collapsePat3_4_2" aria-expanded="false" aria-controls="collapse3_4_2_A collapse3_4_2_B collapse3_4_2_C collapse3_4_2_D">Toggle Entire Group</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_4_2_A')" style="border: solid;">Application of this Issue</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_4_2_B')" style="border: solid;">Antecedent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_4_2_C')" style="border: solid;">Concurrent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_4_2_D')" style="border: solid;">Subsequent Issues</button>
+        </div>
+
+        <div class="collapse multi-collapsePat3_4_2 mt-3" id="collapse3_4_2_A">
+            <div class="card card-body">
+                <h3>Application of this issue:</h3>
+                <h5>Relevant PAAB code section(s)</h5>
+                <ul>
+                    <li>List of relevant code sections go here.</li>
+                </ul>
+                
+                <h5>Relevant internal document(s)</h5>
+                <ul>
+                    <li>Internal guidance on when multiplicity adjustments are required: <a href="documents/internal_docs/evidence/internal_guidance/multiplicity.html">Click Here</a></li>
+                </ul>
+                
+                <h5>Relevant key ruling(s)</h5>
+                <ul>
+                    <li>List of links to internal html key rulings go here.</li>
+                </ul>
+
+                <h5>Relevant exceptions</h5>
+                <ul>
+                    <li>List of exceptions or links to html docs outlining exceptions go here.</li>
+                </ul>
+
+                <h5>Relevent external document(s)</h5>
+                <ul>
+                <li>Links identifying appropriate anchor ID for external html docs go here.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat3_4_2" id="collapse3_4_2_B">
+            <div class="card card-body">
+                <h3>Antecedant Issues:</h3>
+                <ul>
+                    <li>Links identifying internal anchors for antecedant issues go here.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat3_4_2" id="collapse3_4_2_C">
+            <div class="card card-body">
+                <h3>Concurrent Issues:</h3>
+                <ul>
+                    <li>Links identifying internal anchors for concurrent issues go here.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat3_4_2" id="collapse3_4_2_D">
+            <div class="card card-body">
+                <h3>Subsequent Issues:</h3>
+                <ul>
+                    <li>Links identifying internal anchors for subsequent issues go here.</li>
+                </ul>
+                
+            </div>
+        </div>
+
+    </div>
+    <div class="bottom-right">
+        <a href="#" class="back-to-top">Back to Top</a>
+        <a href="#" class="share" data-href="">Share</a>
+    </div>
+<hr>
+</section>
+
+<section class="level3" id="3.4.3">
+    <h2 style="padding-right: 180px;">3.4.3 - The statistical inferences relating to the APS presentation are not based on ITT or aren't consistent with PP</h2>
+    <a href="#" class="btn btn-primary section-btn" target="_blank">Understanding</a>
+    <p>To be considered as evidence, results must achieve an acceptable level of statistical significance.<br>more...</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Within the study itself, the secondary endpoint must be directionally consistent with the primary endpoint in order to be used as support for claims of benefit. Note however that the PAAB may require disclosure of failed secondary endpoints to balance claims based on primary endpoints in order to avoid overly selective presentations (see XXX).</p>
+    </div><!--Close for hidden content-->
+    <div class="container mt-3">
+        <!-- Group 1 -->
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-info" style="border: solid;" data-toggle="collapse" data-target=".multi-collapsePat3_4_3" aria-expanded="false" aria-controls="collapse3_4_3_A collapse3_4_3_B collapse3_4_3_C collapse3_4_3_D">Toggle Entire Group</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_4_3_A')" style="border: solid;">Application of this Issue</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_4_3_B')" style="border: solid;">Antecedent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_4_3_C')" style="border: solid;">Concurrent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_4_3_D')" style="border: solid;">Subsequent Issues</button>
+        </div>
+
+        <div class="collapse multi-collapsePat3_4_3 mt-3" id="collapse3_4_3_A">
+            <div class="card card-body">
+                <h3>Application of this issue:</h3>
+                <h5>Relevant PAAB code section(s)</h5>
+                <ul>
+                    <li>List of relevant code sections go here.</li>
+                </ul>
+                
+                <h5>Relevant internal document(s)</h5>
+                <ul>
+                    <li>List of links to internal html docs go here.</li>
+                </ul>
+                
+                <h5>Relevant key ruling(s)</h5>
+                <ul>
+                    <li>List of links to internal html key rulings go here.</li>
+                </ul>
+
+                <h5>Relevant exceptions</h5>
+                <ul>
+                    <li>List of exceptions or links to html docs outlining exceptions go here.</li>
+                </ul>
+
+                <h5>Relevent external document(s)</h5>
+                <ul>
+                <li>Links identifying appropriate anchor ID for external html docs go here.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat3_4_3" id="collapse3_4_3_B">
+            <div class="card card-body">
+                <h3>Antecedant Issues:</h3>
+                <ul>
+                    <li>Links identifying internal anchors for antecedant issues go here.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat3_4_3" id="collapse3_4_3_C">
+            <div class="card card-body">
+                <h3>Concurrent Issues:</h3>
+                <ul>
+                    <li>Links identifying internal anchors for concurrent issues go here.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat3_4_3" id="collapse3_4_3_D">
+            <div class="card card-body">
+                <h3>Subsequent Issues:</h3>
+                <ul>
+                    <li>Links identifying internal anchors for subsequent issues go here.</li>
+                </ul>
+                
+            </div>
+        </div>
+
+    </div>
+    <div class="bottom-right">
+        <a href="#" class="back-to-top">Back to Top</a>
+        <a href="#" class="share" data-href="">Share</a>
+    </div>
+<hr>
+</section>
+
+<!-- ##### ######################################################################################################### ##### -->
+<!-- ##### Add Superiority, NonInferiority, Equivalence requirements not met as 3.4.4, 3.4.5, and 3.4.6 respectively ##### -->
+<!-- ##### ######################################################################################################### ##### -->
+
+<div class="level2">
+    <h2>Issue Group 3.5 - ENDPOINT CONSIDERATIONS: Secondary endpoints.</h2>
+    <p>It is the results for the PRIMARY endpoint that are intended to address the main study objective.</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>The target sample size is therefore calculated based on the number of primary endpoint events that would be required to reject the null hypothesis and the expected occurrence rate of those events (i.e., the study is powered for the primary endpoint). Many other aspects of study planning are determined (or at least impacted) by the primary endpoint (e.g., the study duration, inclusion and exclusion criteria, measurement protocols, and so on).</p>
+        <p>However, trials are very expensive to conduct (particularly RCTs), so there is financial incentive to include more than one endpoint per trial. Additionally, because most diseases and conditions have more than one clinical consequence, efficacy cannot be adequately established on the basis of a single endpoint. Hence the need for secondary endpoints. Although they are born out of need, they come with important limitations that must be considered when interpreting their results. For example:</p>
+        <ol>
+            <li>Secondary endpoints are usually not taken into consideration from a power standpoint when designing a trial</li>
+            <li>The study cannot possibly be tailored in a manner promoting their validity to the same extent that the study is tailored to the primary endpoint</li>
+            <li>There are generally MANY more secondary endpoints than primary endpoints</li>
+        </ol>
+        <p>As a result of issues 1-3, secondary endpoints must be viewed with caution. This is why it is so important to prominently disclose which study results relate to secondary endpoints in HCP advertising. Note that issue 3 justifies heightened skepticism about statistically significant findings in secondary endpoints. Additionally, issues 1 and 2 explain why a non-significant finding on the primary endpoint would be interpreted as a "failed study" while a non-significant finding in a secondary endpoint would be interpreted as inconclusive. This will be discussed further throughout this group of review issues.</p>
+    </div><!--Close for hidden content-->
+</div><!--close level2-->
+
+<section class="level3" id="3.5.1">
+    <h2 style="padding-right: 180px;">3.5.1 - Findings presented in the APS are inconsistent with the primary endpoint.</h2>
+    <a href="#" class="btn btn-primary section-btn" target="_blank">Understanding</a>
+    <p>To be considered as evidence, results must achieve an acceptable level of statistical significance.<br>more...</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Within the study itself, the secondary endpoint must be directionally consistent with the primary endpoint in order to be used as support for claims of benefit. Note however that the PAAB may require disclosure of failed secondary endpoints to balance claims based on primary endpoints in order to avoid overly selective presentations (see XXX).</p>
+    </div><!--Close for hidden content-->
+    <div class="container mt-3">
+        <!-- Group 1 -->
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-info" style="border: solid;" data-toggle="collapse" data-target=".multi-collapsePat3_5_1" aria-expanded="false" aria-controls="collapse3_5_1_A collapse3_5_1_B collapse3_5_1_C collapse3_5_1_D">Toggle Entire Group</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_5_1_A')" style="border: solid;">Application of this Issue</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_5_1_B')" style="border: solid;">Antecedent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_5_1_C')" style="border: solid;">Concurrent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_5_1_D')" style="border: solid;">Subsequent Issues</button>
+        </div>
+
+        <div class="collapse multi-collapsePat3_5_1 mt-3" id="collapse3_5_1_A">
+            <div class="card card-body">
+                <h3>Application of this issue:</h3>
+                <h5>Relevant PAAB code section(s)</h5>
+                <ul>
+                    <li>List of relevant code sections go here.</li>
+                </ul>
+                
+                <h5>Relevant internal document(s)</h5>
+                <ul>
+                    <li>List of links to internal html docs go here.</li>
+                </ul>
+                
+                <h5>Relevant key ruling(s)</h5>
+                <ul>
+                    <li>List of links to internal html key rulings go here.</li>
+                </ul>
+
+                <h5>Relevant exceptions</h5>
+                <ul>
+                    <li>List of exceptions or links to html docs outlining exceptions go here.</li>
+                </ul>
+
+                <h5>Relevent external document(s)</h5>
+                <ul>
+                    <li>Secondary Endpoint Document: <a href="documents/external_docs/secondary_endpoints_guidance_2013.html#salvage">Click Here</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat3_5_1" id="collapse3_5_1_B">
+            <div class="card card-body">
+                <h3>Antecedant Issues:</h3>
+                <ul>
+                    <li>Links identifying internal anchors for antecedant issues go here.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat3_5_1" id="collapse3_5_1_C">
+            <div class="card card-body">
+                <h3>Concurrent Issues:</h3>
+                <ul>
+                    <li>Links identifying internal anchors for concurrent issues go here.</li>
+                </ul>
+                control for type I error
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat3_5_1" id="collapse3_5_1_D">
+            <div class="card card-body">
+                <h3>Subsequent Issues:</h3>
+                <ul>
+                    <li>Links identifying internal anchors for subsequent issues go here.</li>
+                </ul>
+                
+            </div>
+        </div>
+
+    </div>
+    <div class="bottom-right">
+        <a href="#" class="back-to-top">Back to Top</a>
+        <a href="#" class="share" data-href="">Share</a>
+    </div>
+<hr>
+</section>
+
+<section class="level3" id="3.5.2">
+    <h2 style="padding-right: 180px;">3.5.2 - Findings presented in the APS are overly selective.</h2>
+    <a href="#" class="btn btn-primary section-btn" target="_blank">Understanding</a>
+    <p>To be considered as evidence, results must achieve an acceptable level of statistical significance.<br>more...</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Within the study itself, the secondary endpoint must be directionally consistent with the primary endpoint in order to be used as support for claims of benefit. Note however that the PAAB may require disclosure of failed secondary endpoints to balance claims based on primary endpoints in order to avoid overly selective presentations (see XXX).</p>
+    </div><!--Close for hidden content-->
+    <div class="container mt-3">
+        <!-- Group 1 -->
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-info" style="border: solid;" data-toggle="collapse" data-target=".multi-collapsePat3_5_2" aria-expanded="false" aria-controls="collapse3_5_2_A collapse3_5_2_B collapse3_5_2_C collapse3_5_2_D">Toggle Entire Group</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_5_2_A')" style="border: solid;">Application of this Issue</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_5_2_B')" style="border: solid;">Antecedent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_5_2_C')" style="border: solid;">Concurrent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_5_2_D')" style="border: solid;">Subsequent Issues</button>
+        </div>
+
+        <div class="collapse multi-collapsePat3_5_2 mt-3" id="collapse3_5_2_A">
+            <div class="card card-body">
+                <h3>Application of this issue:</h3>
+                <h5>Relevant PAAB code section(s)</h5>
+                <ul>
+                    <li>List of relevant code sections go here.</li>
+                </ul>
+                
+                <h5>Relevant internal document(s)</h5>
+                <ul>
+                    <li>List of links to internal html docs go here.</li>
+                </ul>
+                
+                <h5>Relevant key ruling(s)</h5>
+                <ul>
+                    <li>List of links to internal html key rulings go here.</li>
+                </ul>
+
+                <h5>Relevant exceptions</h5>
+                <ul>
+                    <li>List of exceptions or links to html docs outlining exceptions go here.</li>
+                </ul>
+
+                <h5>Relevent external document(s)</h5>
+                <ul>
+                    <li>Secondary Endpoint Document: <a href="documents/external_docs/secondary_endpoints_guidance_2013.html#cherry-picking">Click Here</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat3_5_2" id="collapse3_5_2_B">
+            <div class="card card-body">
+                <h3>Antecedant Issues:</h3>
+                <ul>
+                    <li>Links identifying internal anchors for antecedant issues go here.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat3_5_2" id="collapse3_5_2_C">
+            <div class="card card-body">
+                <h3>Concurrent Issues:</h3>
+                <ul>
+                    <li>Links identifying internal anchors for concurrent issues go here.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat3_5_2" id="collapse3_5_2_D">
+            <div class="card card-body">
+                <h3>Subsequent Issues:</h3>
+                <ul>
+                    <li>Links identifying internal anchors for subsequent issues go here.</li>
+                </ul>
+                
+            </div>
+        </div>
+
+    </div>
+    <div class="bottom-right">
+        <a href="#" class="back-to-top">Back to Top</a>
+        <a href="#" class="share" data-href="">Share</a>
+    </div>
+<hr>
+</section>
+
+<section class="level3" id="3.5.3">
+    <h2 style="padding-right: 180px;">3.5.3 - APS presentation does not adequately differentiate between the primary and secondary endpoints.</h2>
+    <a href="#" class="btn btn-primary section-btn" target="_blank">Understanding</a>
+    <p>The HCP should be able to identify which endpoints are not primary endpoints.<br>more...</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>The advertiser can choose from one of the following three ways to differentiate secondary endpoints from primary endpoints:</p>
+        <ol>
+            <li>Identify the primary endpoint in the APS data presentation by labeling it “Primary endpoint.” This conveys that the other endpoints in that presentation are not primary.</li>
+            <li>Identify the secondary endpoints in the APS data presentation by labeling them (or presenting them in a context that conveys) “secondary endpoint.”</li>
+            <li>Precede the APS data presentation with a protocol description listing out the various “Primary” and “Secondary” endpoints for study.</li>
+        </ol>
+
+    </div><!--Close for hidden content-->
+    <div class="container mt-3">
+        <!-- Group 1 -->
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-info" style="border: solid;" data-toggle="collapse" data-target=".multi-collapsePat3_5_3" aria-expanded="false" aria-controls="collapse3_5_3_A collapse3_5_3_B collapse3_5_3_C collapse3_5_3_D">Toggle Entire Group</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_5_3_A')" style="border: solid;">Application of this Issue</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_5_3_B')" style="border: solid;">Antecedent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_5_3_C')" style="border: solid;">Concurrent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse3_5_3_D')" style="border: solid;">Subsequent Issues</button>
+        </div>
+
+        <div class="collapse multi-collapsePat3_5_3 mt-3" id="collapse3_5_3_A">
+            <div class="card card-body">
+                <h3>Application of this issue:</h3>
+                <h5>Relevant PAAB code section(s)</h5>
+                <ul>
+                    <li>PAAB Code s3.1.10: <a href="documents/code/code.html#cs3_1_10">Click Here</a></li>
+                </ul>
+                
+                <h5>Relevant internal document(s)</h5>
+                <ul>
+                    <li>Q&A registry on common scenarios: <a href="#">Click Here</a></li>
+                </ul>
+                
+                <h5>Relevant key ruling(s)</h5>
+                <ul>
+                    <li>Trainin Case Relating to TMA Study: <a href="documents/internal_docs/evidence/key_rulings/secondary_endpoint_training_case.html">CLICK HERE</a></li>
+                </ul>
+
+                <h5>Relevant exceptions</h5>
+                <ul>
+                    <li>There is no need to differentiate the endpoints in ways that the TMA does not (i.e., advertisers should be able to reflect the TMA) UNLESS the APS presentation is confusing and thefore potentially misleading.</li>
+                </ul>
+
+                <h5>Relevent external document(s)</h5>
+                <ul>
+                <li>Secondary Endpoint Guidance Document. <a href="documents/external_docs/secondary_endpoints_guidance_2013.html#transparency">Click Here</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat3_5_3" id="collapse3_5_3_B">
+            <div class="card card-body">
+                <h3>Antecedant Issues:</h3>
+                <ul>
+                    <li><a href="#3.5.1">Issue 3.5.1</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat3_5_3" id="collapse3_5_3_C">
+            <div class="card card-body">
+                <h3>Concurrent Issues:</h3>
+                <ul>
+                    <li><a href="#3.5.2">Issue 3.5.2</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat3_5_3" id="collapse3_5_3_D">
+            <div class="card card-body">
+                <h3>Subsequent Issues:</h3>
+                <ul>
+                    <li>Links identifying internal anchors for subsequent issues go here.</li>
+                </ul>
+                
+            </div>
+        </div>
+
+    </div>
+    <div class="bottom-right">
+        <a href="#" class="back-to-top">Back to Top</a>
+        <a href="#" class="share" data-href="">Share</a>
+    </div>
+<hr>
+</section>
+
+
+
+
+
+
+<script>
+    $(document).ready(function() {
+        $('.toggle_content').click(function() {
+            var hiddenContent = $(this).nextAll(".hidden_content").first(); // More reliable sibling selection
+            hiddenContent.slideToggle('fast', function() {
+                // This ensures the visibility check is accurate
+                var isVisible = hiddenContent.is(":visible");
+                var toggleText = isVisible ? "SEE LESS..." : "SEE MORE...";
+                // Update the text of the toggle element
+                $(this).prev(".toggle_content").text(toggleText);
+            }.bind(this)); // Ensure 'this' inside the callback refers to '.toggle_content'
+        });
+    });
+</script>
+
+<script>
+    function toggleIndividualPat(collapseIdPat) {
+        $('#' + collapseIdPat).collapse('toggle');
+    }
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var shares = document.querySelectorAll('.share');
+        shares.forEach(function(share) {
+            // Find the closest section parent and get its ID
+            var sectionId = share.closest('section').id;
+            // Construct the share URL
+            var shareUrl = window.location.href.split('#')[0] + '#' + sectionId;
+            // Set the share link's href attribute
+            share.setAttribute('href', shareUrl);
+            // Optional: Add event listener for custom share behavior
+            share.addEventListener('click', function(event) {
+                event.preventDefault();
+                // Example: Copy the shareUrl to the clipboard
+                navigator.clipboard.writeText(shareUrl).then(function() {
+                    alert('Share URL copied to clipboard: ' + shareUrl);
+                }, function(err) {
+                    console.error('Could not copy text: ', err);
+                });
+            });
+        });
+    });
+    </script>
+    
+
+</body>
+</html>
+

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grouped Collapsible Content Control with Bootstrap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style type="text/css">
+        body {
+            margin: 60px;
+        }
+        section {
+            position: relative; /* Create a positioning context for the button */
+        }
+        .section-btn {
+            position: absolute;
+            top: 0;
+            right: 0; /* Position the button at the top right */
+            margin-top: 10px; /* Adjust spacing from the top */
+            margin-right: 10px; /* Adjust spacing from the right */
+        }
+        .hidden_content{
+            display: none;
+        }
+
+        .level1{
+            background-color: lightgrey;
+            padding: 10px;
+        }
+        .level2{
+            background-color: #48cae4;
+            color: white;
+            padding: 10px;
+        }
+        .level3{
+            padding: 10px;
+        }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="level1">
+<h2>Issue Group 1 - Presentation of Therapeutic Data from Individual RCTs in Advertising Must be Credible</h2>
+<p>A sentence or two.</p>
+<span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+<div class="hidden_content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div><!--Close for hidden content-->
+</div><!--close level1-->
+
+<div class="level2">
+    <h2>Issue Group 1.1 - The study have undergone sufficient independent review.</h2>
+    <p>Some words of wisdom.</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div><!--Close for hidden content-->
+</div><!--close level2-->
+
+
+
+<section class="level3">
+    <h2>1.1.1</h2>
+    <a href="#" class="btn btn-primary section-btn" target="_blank">Understanding</a>
+    <p>I've got stuff to say.</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div><!--Close for hidden content-->
+    <div class="container mt-3">
+        <!-- Group 1 -->
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-info" style="border: solid;" data-toggle="collapse" data-target=".multi-collapsePat1_1_1" aria-expanded="false" aria-controls="collapse1_1_1_A collapse1_1_1_B collapse1_1_1_C collapse1_1_1_D collapse1_1_1_E">Toggle Entire Group</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_1_A')" style="border: solid;">Antecedent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_1_B')" style="border: solid;">Concurrent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_1_C')" style="border: solid;">Subsequent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_1_D')" style="border: solid;">Application</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_1_E')" style="border: solid;">External Docs</button>
+        </div>
+
+        <div class="collapse multi-collapsePat1_1_1 mt-3" id="collapse1_1_1_A">
+            <div class="card card-body">
+                list of antecedent (Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_1_1" id="collapse1_1_1_B">
+            <div class="card card-body">
+                list of concurrent  (Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_1_1" id="collapse1_1_1_C">
+            <div class="card card-body">
+                list of subsequent (Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_1_1" id="collapse1_1_1_D">
+            <div class="card card-body">
+                list of key rulings(Group 1)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_1_1" id="collapse1_1_1_E">
+            <div class="card card-body">
+                list of external Guidance Docs (Group 1)
+            </div>
+        </div>
+    </div>
+<hr>
+</section>
+
+
+
+
+<section class="level3">
+    <h2>1.1.2</h2>
+    <a href="#" class="btn btn-primary section-btn" target="_blank">Understanding</a>
+    <p>More stuff to say</p>
+    <span class="toggle_content" style="cursor:pointer; color:blue; text-decoration:underline;">SEE MORE...</span>
+    <div class="hidden_content">
+        <p>At quis risus sed vulputate. Sit amet nisl suscipit adipiscing bibendum est ultricies integer. Elementum nibh tellus molestie nunc non blandit massa. Scelerisque fermentum dui faucibus in ornare quam. Tempus quam pellentesque nec nam aliquam. Tellus pellentesque eu tincidunt tortor aliquam. Nisl vel pretium lectus quam id leo in vitae turpis. Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Non enim praesent elementum facilisis leo vel. Amet massa vitae tortor condimentum lacinia quis.</p>
+    </div><!--Close for hidden content-->
+    <div class="container mt-3">
+        <!-- Group 1 -->
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-info" style="border: solid;" data-toggle="collapse" data-target=".multi-collapsePat1_1_2" aria-expanded="false" aria-controls="collapse1_1_2_A collapse1_1_2_B collapse1_1_2_C collapse1_1_2_D collapse1_1_2_E">Toggle Entire Group</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_2_A')" style="border: solid;">Antecedent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_2_B')" style="border: solid;">Concurrent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_2_C')" style="border: solid;">Subsequent Issues</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_2_D')" style="border: solid;">Application</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleIndividualPat('collapse1_1_2_E')" style="border: solid;">External Docs</button>
+        </div>
+
+        <div class="collapse multi-collapsePat1_1_2 mt-3" id="collapse1_1_2_A">
+            <div class="card card-body">
+                list of antecedent (Group 2)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_1_2" id="collapse1_1_2_B">
+            <div class="card card-body">
+                list of concurrent  (Group 2)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_1_2" id="collapse1_1_2_C">
+            <div class="card card-body">
+                list of subsequent (Group 2)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_1_2" id="collapse1_1_2_D">
+            <div class="card card-body">
+                list of key rulings(Group 2)
+            </div>
+        </div>
+        <div class="collapse multi-collapsePat1_1_2" id="collapse1_1_2_E">
+            <div class="card card-body">
+                list of external Guidance Docs (Group 2)
+            </div>
+        </div>
+    </div>
+<hr>
+</section>
+
+
+
+
+<script>
+    $(document).ready(function() {
+        $('.toggle_content').click(function() {
+            var hiddenContent = $(this).nextAll(".hidden_content").first(); // More reliable sibling selection
+            hiddenContent.slideToggle('fast', function() {
+                // This ensures the visibility check is accurate
+                var isVisible = hiddenContent.is(":visible");
+                var toggleText = isVisible ? "SEE LESS..." : "SEE MORE...";
+                // Update the text of the toggle element
+                $(this).prev(".toggle_content").text(toggleText);
+            }.bind(this)); // Ensure 'this' inside the callback refers to '.toggle_content'
+        });
+    });
+</script>
+
+<script>
+    function toggleIndividualPat(collapseIdPat) {
+        $('#' + collapseIdPat).collapse('toggle');
+    }
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats Primer</title>
+</head>
+<style>
+    body{
+        padding: 60px;
+        font-family: helvetica, arial, sans-serif;
+    }
+
+    .site-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #EEEEEE;
+    }
+
+    .title-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .version-info {
+        margin: 0; /* Removes default margin */
+        font-size: 14px; /* Adjust as needed */
+    }
+
+    .logo {
+        height: 50px; /* Adjust based on your logo */
+        width: auto; /* Keeps the aspect ratio */
+    }
+
+</style>
+<body>
+
+<header class="site-header">
+    <div class="title-container">
+        <h1>Stats Primer. INTERNAL TRAINING</h1>
+        <p class="version-info">Version 1. Feb 2016</p>
+    </div>
+    <img src="../../../../../logo/logo.png" alt="PAAB Logo" class="logo">
+</header>
+<br>
+
+<h2>RCTs aim to compare study groups that are identical in all respects except the treatment variable.</h2>
+<p>Conducting a clinical trial entails collecting a sample from the particular population of interest (in consideration of inclusion and exclusion criteria). Then randomly allocating individuals into study groups that should be identical in all respect other than the medication (e.g., sponsor drug group versus an active or inactive control group). The outcome of interest is measured over time so that the sample mean for that outcome can be calculated in both groups. The “parameter” (µ) is the population mean. The parameter is unknown, but the “estimate” (the study group means -- i.e., x̅) are intended to be reflective of what the parameter would be if the study group treatments were each applied to the entire population.</p>
+
+<img src="img/1a.jpg" alt="Illustrative diagram showing statistical sampling for randomized controlled trials. On the left is a large circle representing a population with a mean labeled 'µ', filled with blue dots and a black 'X'. In the center, a subset of these dots is taken into a smaller circle labeled 'Take a study sample'. On the right, the sample is split into two groups, with arrows pointing to 'x̅1' and 'x̅2', indicating the sample means or estimates for each group." title="Randomized Controlled Trial Process: From Population to Sample Groups">
+
+<p>As the drug treatment is the only difference between the groups, we would expect x̅1 to be the same as x̅2 if the drug treatment does not make a difference. In other words, if the null hypothesis were correct, we'd expect x̅1 - x̅2 = 0 (i.e. difference between the study group means) or we'd expect x̅1/ x̅2 = 1 (ratio of the study group means).</p>
+
+<p>There's just one problem. If we repeat this experiment 4 times, we'll get 4 different sets of means for each study group.</p>
+
+<h2>The Random Error Problem</h2>
+<p>Studies are not performed on the entire population of interest. Using samples obviously saves time & money. The downside is that the population mean (a.k.a. the parameter) is likely not the same as the sample mean (a.k.a. the estimate). That's because, as we see in the image below, there are many different potential samples (each having their own mean) that can be selected from the population. This variance in potential sample means is known as the random error.</p>
+
+<img src="img/1b.jpg" alt="Illustration depicting the concept of random error in statistical samples. On the left, a large circle represents the entire population with blue dots and a black 'X' signifying the population mean (parameter) 'µ'. An arrow labeled 'Take a sample' points to four smaller circles to the right, each with a different pattern of green, yellow, blue, and gray dots, representing different potential samples from the population. Each of these samples has an arrow pointing to their respective sample means (estimates) 'x̅', which then point towards the true population mean 'µ', illustrating the variance among sample means due to random error." title="Sampling Variability and Random Error in Statistics">
+
+<p>In theory, the average of the many (i.e., much more than 4) samples from the same population when exposed to a particular treatment should be equal to the parameter (assuming the methodology successfully avoids any systematic bias). BUT studies are rarely replicated once, let alone many times.</p>
+
+<p>Note that the concern here is the creation of the sample from the population rather than the allocation into study groups. The latter does not compound the random error problem as randomization is used. As long as we have a large sample, random allocation into two study groups should result in two identical groups that reflect the originally created sample in all ways. The problem is that the pre-allocation sample is likely not perfectly representative of the population due to random error.</p>
+
+<h2>Some good news. Potential sample means in a trial vary around the actual population mean in a normal distribution</h2>
+<p>Fortunately, although the potential sample means vary, they do so around the population mean.</p>
+
+<img src="img/1c.jpg" alt="Graphical representation of the distribution of potential sample means around the population mean, depicted by a normal distribution curve on a histogram. The histogram bars in blue show the frequency of data points with a range from -3 to 3. The smooth, bell-shaped curve in brown, labeled 'Population', peaks at the center (mean) and represents the normal distribution of sample means, highlighting the concept that despite the actual population distribution not being normal, the distribution of sample means will approximate normality with sufficiently large samples." title="The distribution of sample means is approximately normal, centered around the population mean, even if the population distribution itself is not normal. This illustrates the importance of large sample sizes in trials.">
+
+
+<p>In fact, as we see in the above image, the distribution of sample means is approximately normal (i.e. bell curve), even though the population distribution is not normal. This tends to occur provided the samples are large enough, and it is one of the reasons why having a large sample size is such a great thing from a critical appraisal point of view.</p>
+
+<h2>The empirical rule therefore applies</h2>
+<p>Because the potential sample means form a normal distribution, the "68, 95, 99.7 rule" (also known as the "empirical rule") applies. This rule states that:</p>
+<ul>
+    <li>68% of the potential sample means would be within 1 Standard Deviation of mean</li>
+    <li>95% of the potential sample means would be within 2 Standard Deviation of mean</li>
+    <li>99.7% of the potential sample means would be within 3 Standard Deviation of mean</li>
+</ul>
+
+<img src="img/1d.jpg" alt="Normal distribution curve with sections representing the empirical rule. It shows percentages of data within standard deviations from the mean: 34.1% within one, 13.6% within two, 2.1% within three, and 0.1% beyond three, on both sides of the mean µ." title="68-95-99.7 rule: 68% of values are within one standard deviation of the mean, 95% within two, and 99.7% within three.">
+
+<p>Although it is impossible to eliminate random error (short of studying the entire population), this fact enables us to account for random error by using probability and statistics. The fact that only 1 in 20 sample means would be beyond 2 standard deviations away from the true population mean is central to how statistical inference is conducted in studies.</p>
+
+<p>Importantly, this is true not only of the sample means (and by extension the means of study groups derived through randomization from a sample), but it is also true for the difference or ratio of means between study groups.</p>
+
+<p>As an aside, note that the narrower the 2-standard deviation around the true population mean, the lesser the random error.</p>
+
+<img src="img/1e.jpg" alt="Two overlaid normal distribution curves on an x-axis labeled 'X'. The green curve is steeper with less spread, labeled 'the distribution of X with less random error'. The blue curve is wider, labeled 'the distribution of X with random error'. A note indicates that random error affects the variability around the average, not the average itself." title="Comparing distributions with different degrees of random error, showing that more error increases the spread of data around the mean, affecting precision.">
+
+<h2>Statistical inference</h2>
+<p>Statistical inference employs statistical tools that leverage the empirical rule. There are two main paradigms.</p>
+<table border="solid">
+    <thead style="background-color: #EEEEEE;">
+        <th>Frequentist Inference</th>
+        <th>Bayesian Inference</th>
+    </thead>
+    <tr>
+        <td>p-values</td>
+        <td>Bayes Factors</td>
+    </tr>
+    <tr>
+        <td>Confidence Intervals</td>
+        <td>Credibility Intervals</td>
+    </tr>
+</table>
+
+<p>Except were stated otherwise, all content on this site is specific to frequentist inference.</p>
+
+<h2>Intro to Confidence Intervals</h2>
+<p>Note that the principle "No stats. No claim" refers to the need specifically for a statistical inference test for the comparison between study groups (i.e., CI for the comparison x̅1 - x̅2 or x̅1/ x̅2). Claims are not permitted based on the separate confidence intervals for x̅1 or x̅2. This is in important point we'll circle back to later on this page.</p>
+<ul>
+    <li>95% of the sample means would fall within the range of the 95%CI</li>
+    <li>2.5% would fall above this range</li>
+    <li>2.5% would fall below this range</li>
+</ul>
+
+<img src="img/1f.jpg" alt="Normal distribution curve with shaded area representing a 95% confidence interval between the lower and upper limits around the mean. The areas beyond the confidence interval each represent a 2.5% chance of sample means falling outside, totaling a 5% chance that a sample mean would not be captured by this range." title="95% Confidence Interval: Understanding the range where we expect 95% of sample means to fall in repeated sampling.">
+
+
+<p>The scientific community tolerates a 5% chance that a repeated sample would fall outside the 95% interval. This means that we cannot control whether any particular decision to reject the null hypothesis is correct. We can only control the overall number of decisions which are incorrect due to chance.</p>
+
+<h4>Recall from earlier:</h4>
+<p>As the drug treatment is the only difference between the groups, we would expect x̅1 to be the same as x̅2 if the drug treatment does not make a difference. In other words, if the null hypothesis were correct, we'd expect x̅1 - x̅2 = 0 (i.e. difference between the study group means) or we'd expect x̅1/ x̅2 = 1 (ratio of the study group means).</p>
+<p>ALSO...</p>
+<p>In theory, the average of the many (i.e., much more than 4) samples from the same population when exposed to a particular treatment should be equal to the parameter (assuming the methodology successfully avoids any systematic bias). BUT studies are rarely replicated once, let alone many times.</p>
+
+<p style="font-weight: bold;">This is where the confidence interval comes in!</p>
+
+<p>A 95% CI for difference between the sponsor drug group mean and the control group mean that does not include 0 results in rejection of the null hypothesis.</p>
+
+<p>Why? Because there is less than a 5% chance on repeat sampling that the difference between the sponsor drug group mean and the control group mean will include a number out of the 95% CI range, and zero is outside of that range.</p>
+
+<p>The same is true for a 95% CI for a ratio of the sponsor drug group mean divided by the control group mean which does not include 1.</p>
+
+<p>Of course, we must remain cognizant that there is a 5% chance that we are falsely rejecting the null hypothesis (this is known as the type I error rate). Stated an alternate way, this means we accept a 5% chance of rejecting the null hypothesis due to chance alone.</p>
+
+<p>The wider the confidence interval, the more likely it is to include zero (or 1 for a ratio of means).</p>
+
+<p>The width of the confidence interval hinges on three factors:</p>
+
+<ol type="i">
+    <li><span style="font-weight: bold;">The desired level of confidence</span><br>
+    For example:
+        <ul>
+            <li>90% CI: |---|</li>
+            <li>95% CI: |-------|</li>
+            <li>98% CI: |--------------|</li>
+        </ul>
+    The confidence level tells you the percentage of potential sample means that would fall within the specified range. Therefore, the higher the required confidence level, the wider the range (and consequentially, the more likely that the range includes 0 for the mean difference between two groups or 1 for the mean ratio between the two groups).<br>  
+    Always make sure the confidence level is disclosed in the APS. Note that PAAB Code s5.9 requires therapeutic claims to be supported with <span>at least</span> a 95% confidence level while bioequivalence claims can be supported with a 90% confidence level.
+    </li><br>
+    <li><span style="font-weight: bold;">standard deviation in the underlying population</span><br>
+    The more heterogeneous the sample, the wider the CI will be. That's part of the reason why trials have so many exclusion criteria or such narrow inclusion criteria. The more alike the patients, are the narrower the CI. Of course, this statistical gain can come at the cost of generalizability of the results to real-world clinical practice.
+    </li><br>
+    <li><span style="font-weight: bold;">The size of the sample you collect</span><br>
+    The larger the sample, the narrower the CI.
+    </li><br>
+</ol>
+<p>The code acknowledges that confidence intervals are preferred over p-values as they allow the reader to see the size of the effect and the precision of the estimate.</p>
+<blockquote> PAAB Code s4.2.1:<br>  
+     …Where confidence intervals and p-values are both available, the manufacturer may decide to report both. The use of 95% CI is encouraged in preference to p-value…</blockquote>
+<p>But please note that p-values are completely acceptable. We never need to request one over the other.</p>
+
+<h2>Intro to p-values</h2>
+<p>The p stands for probability. The p-value is the probability of obtaining a result at least this extreme by chance alone.</p>
+<p>p=0.05:<br>1 in 20 times</p>
+
+<p>p=0.01:<br>1 in 100 times</p>
+
+<p>p=0.000001:<br>1 in 1 million times</p>
+
+<p>A very low p-value does not necessarily mean the result is more “trustworthy” or clinically important!! This only deals with random error, it does not address methodological bias nor does it address the need for a predetermined threshold for clinical significance.</p>
+
+<p>Again, we cannot control whether a particular assessment is due to chance. We can only control the overall number of observations which are due to chance. It is always possible that a particular outcome is the 1 in 20, the 1 in 100, or even the 1 in a million due to chance alone!!</p>
+
+<p>Determinants of the p-value:</p>
+<ul>
+    <li><span style="font-weight: bold;">Size of effect:</span> Observed difference in means. The larger the magnitude of difference between the groups, the smaller the p-value will be.</li>
+    <li><span style="font-weight: bold;">Precision of measurement:</span> Variability in the sample mean distribution. The less heterogeneity in the study sample, the lower the p-value (and therefore as with CI, the easier it is to attain statistical significance).</li>
+</ul>
+
+<h2>No stats, No claim</h2>
+<p>For clinical trial data to be accepted in an APS, there needs to have been statistical tests performed for the inter-group comparison. A side-by-side presentation of data from two study groups is not accepted in the absence of the p-value or CI corresponding to the intergroup comparison for that endpoint.</p>
+<p>However, adding the absolute reduction (e.g. a Number Needed to Treat -- NNT) to a presentation featuring a relative reduction between groups with the corresponding statistical analysis does not require additional statistical analysis. The same is true to adding a relative reduction to an absolute reduction presentation.</p>
+<p>Avoid claims that inverse the studies endpoint. For example, if the study demonstrated that 0.2% of woman on birth control X became pregnant, do not allow the APS presentation to present the data as 99.8% of woman on birth control X did not become pregnant. On the surface, this is simple arithmetic, but it's a different hypothesis which may have resulted in a different study design.</p>
+<p>There are a couple of notable exceptions to "No stats. No claim":</p>
+<ul>
+    <li>TMA content can appear in the APS even if there are no stats.</li>
+    <li>A non-comparative presentation of the s/e for the manufacturer's product is acceptable from a study provided the data is roughly aligned with the TMA.</li>
+</ul>
+
+<h2>What if there are only CI for the individual study groups? i.e., what if there is no CI or p-value for the difference or ratio between groups?</h2>
+
+<p>The short answer is "Too bad. The data may not be presented at all". The rationale follows.</p>
+<p>It would be tempting to use the error bars to make statistical inferences:</p>
+
+<img src="img/1h.jpg" alt="Bar graph comparing mean scores of Drug A and Drug B at 4 weeks and 8 weeks. Error bars for each drug at both time points suggest greater improvement for Drug B at 8 weeks, with no overlap between Drug A and Drug B error bars, which could be misinterpreted as a significant difference. However, without a CI or p-value for group differences, no statistical claims can be made." title="Error Bars in Clinical Study Results: Indicate precision around the mean, not statistical significance between treatment groups.">
+
+
+
+<p>Those error bars can be one of three types:</p>
+<ul>
+    <li><strong>Confidence intervals:</strong><br>
+        These are confidence intervals for individual study groups. If they are specifically 95%CI, you might be tempted to conclude that the difference was not statistically significant at week 4 and that a statistically significant difference was attained at week 8. This approach is not appropriate however because each bar has its own independent 5% type 1 error rate (so the combined type 1 error rate for the comparison is greater than 5% error tolerated by the code and the scientific community). In addition to this, it's not practical to do multiplicity adjustments on separate CIs. You'll read about multiplicity later in the CLINICAL STUDIES section.
+    </li>
+    <li><strong>Standard Error of Mean (SEM)</strong><br>
+        Standard error of the mean. These tend to be much narrower than 95%CI bars. In fact, 95%CI are approximately twice as long as standard error bars for large samples (and there's even more of a difference for small groups). So the fact that the SEMs for two groups don't overlap is less than meaningless. If they do overlap, you can be extremely confident that p=NS, but you can't use p=NS to support claims anyways. So the bottom line is that you can't base claims on a side-by-side comparison of SEMs.
+    </li>
+    <li><strong>Standard Deviation (SD)</strong><br>
+        Some graphs and tables show the mean with the standard deviation (SD) rather than the SEM or CI. The SD quantifies variability, but does not account for sample size. To assess statistical significance, you must take into account sample size as well as variability. Therefore, observing whether SD error bars overlap or not tells you nothing about whether the difference is, or is not, statistically significant.
+    </li>
+</ul>
+
+<p>The bottom line is that error bars should only be used for what they were meant to do, convey the level of precision around the mean. They can be included in graphs in advertising provided they come from the published study, but no claims can be based on these.</p>
+
+<p>This has huge implications. Comparative data presentations can only appear in an APS if there is valid statistical analysis performed and included in the presentation (unless the presentation comes from the TMA). So comparative data can only appear in advertising if there is a CI or p-value for the difference between the treatment groups or for the odds ratio between the treatment groups.</p>
+
+<h2>A word about systematic bias and random bias</h2>
+<p>We learned that estimate ≠ parameter due to random error. Near the top of this page, we stated an assumption that systematic bias is avoided by the trials methodology. Note that this is not realistic as there is no such thing as a perfect trial. In reality:</p>
+<p>Parameter = Estimate + Random error + Systematic bias</p>
+<p>We only discuss random error on this page as most of the rest of the Clinical Studies section is focused on systematic bias (i.e. using randomization, maintaining a highly controlled environment, using blinding, using ITT dataset, avoiding post-hoc analysis, using validated endpoints, requiring head-to-head comparisons from a single study as opposed to pooling results across multiple studies, and soon).</p>
+
+PAAB Code links: s5.9 & s4.2.1
+
+</body>
+</html>
